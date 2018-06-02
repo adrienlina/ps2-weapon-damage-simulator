@@ -32,7 +32,7 @@ function Viper() {
     fireRate: 240,
     magazineSize: 6,
     reloadTime: 4.5,
-    reloadSpeedAttachment: 0.15,
+    reloadSpeedAttachment: 0.1,
   });
 };
 
@@ -45,7 +45,7 @@ function PythonHEAT() {
     fireRate: 100,
     magazineSize: 1,
     reloadTime: 2,
-    reloadSpeedAttachment: 0.15,
+    reloadSpeedAttachment: 0.1,
   });
 };
 
@@ -58,7 +58,7 @@ function PythonAP() {
     fireRate: 100,
     magazineSize: 1,
     reloadTime: 3,
-    reloadSpeedAttachment: 0.15,
+    reloadSpeedAttachment: 0.1,
   });
 };
 
@@ -71,7 +71,7 @@ function PythonHESH() {
     fireRate: 100,
     magazineSize: 1,
     reloadTime: 3,
-    reloadSpeedAttachment: 0.15,
+    reloadSpeedAttachment: 0.1,
   });
 };
 
