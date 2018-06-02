@@ -1,6 +1,5 @@
 function Viper() {
   Weapon.call(this, {
-    name: "Viper",
     damage: 300,
     fireRate: 240,
     magazineSize: 6,
@@ -9,8 +8,8 @@ function Viper() {
     damageResistType: 7,
   });
 };
-
 Viper.prototype = Object.create(Weapon.prototype);
+Viper.fullName = "Viper";
 
 function PythonHEAT() {
   Weapon.call(this, {
@@ -23,8 +22,8 @@ function PythonHEAT() {
     damageResistType: 7,
   });
 };
-
 PythonHEAT.prototype = Object.create(Weapon.prototype);
+PythonHEAT.fullName = "Python HEAT";
 
 function PythonAP() {
   Weapon.call(this, {
@@ -37,8 +36,8 @@ function PythonAP() {
     damageResistType: 7,
   });
 };
-
 PythonAP.prototype = Object.create(Weapon.prototype);
+PythonAP.fullName = "Python AP";
 
 function PythonHESH() {
   Weapon.call(this, {
@@ -51,5 +50,5 @@ function PythonHESH() {
     damageResistType: 7,
   });
 };
-
 PythonHESH.prototype = Object.create(Weapon.prototype);
+PythonHESH.fullName = "Python HESH";

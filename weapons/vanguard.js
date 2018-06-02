@@ -1,6 +1,5 @@
 function TitanHEAT() {
   Weapon.call(this, {
-    name: "Titan-150 HEAT",
     damage: 550,
     fireRate: 240,
     magazineSize: 1,
@@ -10,10 +9,10 @@ function TitanHEAT() {
   });
 };
 TitanHEAT.prototype = Object.create(Weapon.prototype);
+TitanHEAT.fullName = "Titan-150 HEAT";
 
 function TitanAP() {
   Weapon.call(this, {
-    name: "Titan 150 AP",
     damage: 750,
     fireRate: 240,
     magazineSize: 1,
@@ -23,6 +22,7 @@ function TitanAP() {
   });
 };
 TitanAP.prototype = Object.create(Weapon.prototype);
+TitanAP.fullName = "Titan-150 AP";
 
 function TitanHESH() {
   Weapon.call(this, {
@@ -36,3 +36,4 @@ function TitanHESH() {
   });
 };
 TitanHESH.prototype = Object.create(Weapon.prototype);
+TitanHESH.fullName = "Titan-150 HESH";

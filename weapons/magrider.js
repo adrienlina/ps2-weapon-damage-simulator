@@ -1,6 +1,5 @@
 function SupernovaPC() {
   Weapon.call(this, {
-    name: "Supernova PC",
     damage: 550,
     fireRate: 240,
     magazineSize: 1,
@@ -10,10 +9,10 @@ function SupernovaPC() {
   });
 };
 SupernovaPC.prototype = Object.create(Weapon.prototype);
+SupernovaPC.fullName = "Supernova PC";
 
 function SupernovaFPC() {
   Weapon.call(this, {
-    name: "Supernova FPC",
     damage: 750,
     fireRate: 240,
     magazineSize: 1,
@@ -23,10 +22,10 @@ function SupernovaFPC() {
   });
 };
 SupernovaFPC.prototype = Object.create(Weapon.prototype);
+SupernovaFPC.fullName = "Supernova FPC";
 
 function SupernovaVPC() {
   Weapon.call(this, {
-    name: "Supernova VPC",
     damage: 650,
     fireRate: 240,
     magazineSize: 1,
@@ -36,3 +35,4 @@ function SupernovaVPC() {
   });
 };
 SupernovaVPC.prototype = Object.create(Weapon.prototype);
+SupernovaVPC.fullName = "Supernova VPC";

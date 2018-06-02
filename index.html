@@ -45,8 +45,8 @@
             </div>
             <div :id="'collapse-' + vehicleName" class="collapse">
               <ul class="list-group">
-                <li v-for="weapon in weapons" v-bind:key="weapon.name" class="list-group-item">
-                  <span class="todo-text">{{ weapon.name }}</span>
+                <li v-for="weapon in weapons" :key="weapon.fullName" class="list-group-item">
+                  <span class="todo-text">{{weapon.fullName}}</span>
                   <span class="btn btn-primary float-right" @click="addWeapon(weapon)">Add</span>
                 </li>
               </ul>
@@ -62,9 +62,9 @@
               <h6>{{target.name}}</h6>
             </div>
           </div>
-          <div v-for="weapon in currentWeapons" v-bind:key="weapon.name" class="row">
+          <div v-for="weapon in currentWeapons" :key="weapon.fullName" class="row">
             <div class="col grid">
-              <h6>{{weapon.name}}</h6>
+              <h6>{{weapon.fullName}}</h6>
             </div>
             <div v-for="target in currentTargets" class="col grid">
               {{weaponSimulation(target, weapon).timer | round}}s ({{weaponSimulation(target, weapon).nShots }} shots)
