@@ -16,7 +16,7 @@ function TTKSimulation(targetClass, weaponClass, direction) {
     var wait = weapon.shoot();
     target.takeDamage(weapon.damage, direction);
 
-    if (target.hp < 0) {
+    if (target.hp <= 0) {
       history.push({
         time: timer,
         hp: target.hp,
