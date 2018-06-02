@@ -26,28 +26,39 @@
       </div>
       <div class="row">
         <div class="col-sm-4">
-          <ul class="list-group">
-            <li class="list-group-item list-group-item-dark">
-              Weapons
-            </li>
-            <li v-for="weapon in weaponsList" v-bind:key="weapon.name" class="list-group-item">
-              <span class="todo-text">{{ weapon.name }}</span>
-              <span class="btn btn-primary float-right" @click="addWeapon(weapon)">Add</span>
-            </li>
-          </ul>
-          <ul class="list-group">
-            <li class="list-group-item list-group-item-dark">
-              Damage Incoming Direction
-            </li>
-            <li v-for="direction in directionsList" v-bind:key="direction" class="list-group-item">
-              <span class="todo-text">{{direction|capitalize}}</span>
-              <span class="btn btn-primary float-right" @click="changeDirection(direction)">Use</span>
-            </li>
-          </ul>
+          <div class="card">
+            <div class="card-header">
+              <div class="btn-group btn-group-toggle">
+                <label v-for="(direction, index) in directionsList" class="btn btn-secondary" :class="{ active: direction === currentDirection }">
+                  <input type="radio" autocomplete="off" :value="direction" v-model="currentDirection" /> {{direction|capitalize}}
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div v-for="(weapons, vehicleName) in weaponsList" class="card">
+            <div class="card-header">
+              <h5 class="mb">
+                <button class="btn btn-light" data-toggle="collapse" data-target="#collapse-{{vehicleName}}">
+                  {{vehicleName}}
+                </button>
+              </h5>
+            </div>
+            <div id="collapse-{{vehicleName}}" class="collapse">
+              <ul class="list-group">
+                <li v-for="weapon in weapons" v-bind:key="weapon.name" class="list-group-item">
+                  <span class="todo-text">{{ weapon.name }}</span>
+                  <span class="btn btn-primary float-right" @click="addWeapon(weapon)">Add</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
         </div>
+
         <div class="col-sm-8">
           <div class="row">
-            <div class="col"></div>
+            <div class="col" style="margin:.1em;"></div>
             <div v-for="target in currentTargets" class="col grid">
               <h6>{{target.name}}</h6>
             </div>

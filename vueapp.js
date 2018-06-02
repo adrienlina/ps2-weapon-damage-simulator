@@ -17,12 +17,14 @@ new Vue({
         'bottom',
       ],
       currentDirection: 'front',
-      weaponsList: [
-        Viper,
-        PythonHEAT,
-        PythonAP,
-        PythonHESH,
-      ],
+      weaponsList: {
+        'Lightning': [
+          Viper,
+          PythonHEAT,
+          PythonAP,
+          PythonHESH,
+        ],
+      },
       currentWeapons: [],
       currentTargets: [
         Lightning,
