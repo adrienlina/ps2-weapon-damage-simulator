@@ -34,6 +34,11 @@ new Vue({
           TitanAP,
           TitanHESH,
         ],
+        'Prowler': [
+          P2HEAT,
+          P2AP,
+          P2HESH,
+        ],
       },
       currentWeapons: [],
       currentTargets: [

@@ -2,7 +2,7 @@ function Magrider() {
   Vehicle.call(this, {
     "name": "Magrider",
     "profile_id": 29,
-    "hp": 4000,
+    "hp": 5000,
     "resistances": {
         "front": 0,
         "right": -15,
