@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Grid Template for Bootstrap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
+  </head>
+
+  <body>
+    <div id="app" class="container">
+      <h1>PS2 Vehicle damage Simulator</h1>
+      <div class="row">
+        <p>
+          Disclaimer:
+          <ul>
+            <li>Data is not from the DBG Census API, so potentially out-of-date (last update Jun. 2nd 2018)</li>
+            <li>TTKs are purely theoretical, based on 1/ firing as soon as gun is ready 2/ perfect aim (all bullets land on target)</li>
+            <li>There might be a refire delay before the reload action, which is not taken into account here</li>
+          </ul>
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-dark">
+              Weapons
+            </li>
+            <li v-for="weapon in weaponsList" v-bind:key="weapon.name" class="list-group-item">
+              <span class="todo-text">{{ weapon.name }}</span>
+              <span class="btn btn-primary float-right" @click="addWeapon(weapon)">Add</span>
+            </li>
+          </ul>
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-dark">
+              Damage Incoming Direction
+            </li>
+            <li v-for="direction in directionsList" v-bind:key="direction" class="list-group-item">
+              <span class="todo-text">{{direction|capitalize}}</span>
+              <span class="btn btn-primary float-right" @click="changeDirection(direction)">Use</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-8">
+          <div class="row">
+            <div class="col"></div>
+            <div v-for="target in currentTargets" class="col grid">
+              <h6>{{target.name}}</h6>
+            </div>
+          </div>
+          <div v-for="weapon in currentWeapons" v-bind:key="weapon.name" class="row">
+            <div class="col grid">
+              <h6>{{weapon.name}}</h6>
+            </div>
+            <div v-for="target in currentTargets" class="col grid">
+              {{weaponSimulation(target, weapon).timer | round}}s ({{weaponSimulation(target, weapon).nShots }} shots)
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
+
+    <script src="weapon.js"></script>
+    <script src="vehicle.js"></script>
+    <script src="simulate.js"></script>
+
+    <script src="vueapp.js"></script>
+  </body>
+</html>
