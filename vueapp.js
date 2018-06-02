@@ -29,6 +29,11 @@ new Vue({
           SupernovaFPC,
           SupernovaVPC,
         ],
+        'Vanguard': [
+          TitanHEAT,
+          TitanAP,
+          TitanHESH,
+        ],
       },
       currentWeapons: [],
       currentTargets: [
