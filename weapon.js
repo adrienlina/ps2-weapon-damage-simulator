@@ -3,6 +3,7 @@ function Weapon(infos) {
   this.fireRate = infos.fireRate;
   this.magazineSize = infos.magazineSize;
   this.reloadTime = infos.reloadTime;
+  this.damageResistType = infos.damageResistType;
 
   this.reloadSpeedAttachment = infos.reloadSpeedAttachment || 0;
 
@@ -33,6 +34,7 @@ function Viper() {
     magazineSize: 6,
     reloadTime: 4.5,
     reloadSpeedAttachment: 0.1,
+    damageResistType: 7,
   });
 };
 
@@ -46,6 +48,7 @@ function PythonHEAT() {
     magazineSize: 1,
     reloadTime: 2,
     reloadSpeedAttachment: 0.1,
+    damageResistType: 7,
   });
 };
 
@@ -59,6 +62,7 @@ function PythonAP() {
     magazineSize: 1,
     reloadTime: 3,
     reloadSpeedAttachment: 0.1,
+    damageResistType: 7,
   });
 };
 
@@ -72,6 +76,7 @@ function PythonHESH() {
     magazineSize: 1,
     reloadTime: 3,
     reloadSpeedAttachment: 0.1,
+    damageResistType: 7,
   });
 };
 

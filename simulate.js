@@ -14,7 +14,7 @@ function TTKSimulation(targetClass, weaponClass, direction) {
     });
     nShots += 1;
     var wait = weapon.shoot();
-    target.takeDamage(weapon.damage, direction);
+    target.takeDamage(weapon, direction);
 
     if (target.hp <= 0) {
       history.push({
@@ -46,9 +46,3 @@ function TTKSimulation(targetClass, weaponClass, direction) {
     nShots,
   };
 }
-
-
-console.log(TTKSimulation(Lightning, Viper, 'side'));
-console.log(TTKSimulation(Lightning, PythonHEAT, 'side'));
-console.log(TTKSimulation(Lightning, PythonAP, 'side'));
-console.log(TTKSimulation(Lightning, PythonHESH, 'side'));

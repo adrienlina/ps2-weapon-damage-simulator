@@ -30,6 +30,7 @@ new Vue({
         Lightning,
         Magrider,
         Vanguard,
+        Harasser,
       ],
       computedSimulations: {},
     };
