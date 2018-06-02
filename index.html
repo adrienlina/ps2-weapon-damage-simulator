@@ -38,12 +38,12 @@
           <div v-for="(weapons, vehicleName) in weaponsList" class="card">
             <div class="card-header">
               <h5 class="mb">
-                <button class="btn btn-light" data-toggle="collapse" data-target="#collapse-{{vehicleName}}">
+                <button class="btn btn-light" data-toggle="collapse" :data-target="'#collapse-' + vehicleName">
                   {{vehicleName}}
                 </button>
               </h5>
             </div>
-            <div id="collapse-{{vehicleName}}" class="collapse">
+            <div :id="'collapse-' + vehicleName" class="collapse">
               <ul class="list-group">
                 <li v-for="weapon in weapons" v-bind:key="weapon.name" class="list-group-item">
                   <span class="todo-text">{{ weapon.name }}</span>
@@ -81,6 +81,8 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.min.js'></script>
 
     <script src="weapon.js"></script>
+    <script src="weapons/lightning.js"></script>
+    <script src="weapons/magrider.js"></script>
     <script src="vehicle.js"></script>
     <script src="vehicles/lightning.js"></script>
     <script src="vehicles/magrider.js"></script>

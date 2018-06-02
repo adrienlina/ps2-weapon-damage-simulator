@@ -24,6 +24,11 @@ new Vue({
           PythonAP,
           PythonHESH,
         ],
+        'Magrider': [
+          SupernovaPC,
+          SupernovaFPC,
+          SupernovaVPC,
+        ],
       },
       currentWeapons: [],
       currentTargets: [
