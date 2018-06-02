@@ -18,6 +18,13 @@ new Vue({
       ],
       currentDirection: 'front',
       weaponsList: {
+        'Harasser': [
+          HalberdHarasser,
+          FuryHarasser,
+          EnforcerHarasser,
+          GatekeeperHarasser,
+          SaronHarasser,
+        ],
         'Lightning': [
           Viper,
           PythonHEAT,
